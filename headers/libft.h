@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:06:17 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/18 15:27:51 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:20:13 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isquote(int c);
 int		ft_getlength(unsigned long long n, int base);
+int		ft_wordcount(const char *str, char c);
 
 /*-------------------------STRINGS-------------------------*/
 char	**ft_split(char const *s, char c);

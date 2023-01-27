@@ -18,7 +18,7 @@ SRCDIR = ./src/
 LIBFTDIR = ./libft/
 HEADERDIR = ./headers/
 
-SRC = 	src/
+SRC = 	src/arrays.c \
 
 #SRC_BONUS =	src/
 
@@ -44,7 +44,8 @@ $(NAME): 	$(OBJ) $(LIBFT)
 		$(CC) $(CFLAGS) $(OBJ) $(LIBFTDIR)$(LIBFT) -o $(NAME)
 		
 #bonus: 	$(OBJ_BONUS) $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFTDIR)$(LIBFT) -o $(NAME)	
+#		$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFTDIR)$(LIBFT) -o $(NAME)	
+
 clean:
 		$(RM) $(OBJ) $(OBJ_BONUS)
 		cd $(LIBFTDIR) && $(MAKE) clean

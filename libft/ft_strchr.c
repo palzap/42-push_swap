@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:24:08 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/05 07:59:13 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/01/26 09:59:44 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,3 @@ char	*ft_strchr(const char *str, int c)
 	}
 	return (((char *)str) + i);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	printf("%s\n", strchr("teste", 1024));
-	printf("%s\n", ft_strchr("teste", 1024));
-	return (0);
-}*/

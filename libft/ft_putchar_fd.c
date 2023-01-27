@@ -6,11 +6,11 @@
 /*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:54:41 by pealexan          #+#    #+#             */
-/*   Updated: 2022/12/07 14:54:08 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/01/26 09:59:30 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../headers/libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
