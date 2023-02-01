@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pealexan <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pleal <pleal@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 08:46:18 by pealexan          #+#    #+#              #
-#    Updated: 2022/11/14 08:46:22 by pealexan         ###   ########.fr        #
+#    Updated: 2023/02/01 08:28:42 by pleal            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,13 @@ SRC =	ft_abs.c \
 	ft_lstmap.c \
 	ft_lstnew.c \
 	ft_lstsize.c \
+	ft_max.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
+	ft_min.c \
 	ft_printf.c \
 	ft_putaddress.c \
 	ft_putchar.c \

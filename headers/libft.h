@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pleal <pleal@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:06:17 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/25 14:20:13 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/01 08:27:35 by pleal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		ft_isspace(int c);
 int		ft_isquote(int c);
 int		ft_getlength(unsigned long long n, int base);
 int		ft_wordcount(const char *str, char c);
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
 
 /*-------------------------STRINGS-------------------------*/
 char	**ft_split(char const *s, char c);

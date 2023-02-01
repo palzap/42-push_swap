@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+         #
+#    By: pleal <pleal@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 08:46:18 by pealexan          #+#    #+#              #
-#    Updated: 2022/12/06 16:33:14 by pealexan         ###   ########.fr        #
+#    Updated: 2023/02/01 09:18:11 by pleal            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,18 @@ SRCDIR = ./src/
 LIBFTDIR = ./libft/
 HEADERDIR = ./headers/
 
-SRC = 	src/arrays.c \
-
-#SRC_BONUS =	src/
+SRC = 	src/best_move.c \
+		src/do_move.c \
+		src/get_stack.c \
+		src/get_values.c \
+		src/indexing.c \
+		src/push.c \
+		src/push_swap.c \
+		src/reverse_rotate.c \
+		src/rotate.c \
+		src/sort.c \
+		src/swap.c \
+		src/utils.c \
 
 #--------COMMANDS--------#
 CC = cc
@@ -29,7 +38,6 @@ AR = ar rcs
 RM = rm -rf
 
 OBJ = ${SRC:.c=.o}
-#OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 #---------RULES---------#
 .c.o:
@@ -42,9 +50,6 @@ $(LIBFT):
 	
 $(NAME): 	$(OBJ) $(LIBFT)
 		$(CC) $(CFLAGS) $(OBJ) $(LIBFTDIR)$(LIBFT) -o $(NAME)
-		
-#bonus: 	$(OBJ_BONUS) $(LIBFT)
-#		$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFTDIR)$(LIBFT) -o $(NAME)	
 
 clean:
 		$(RM) $(OBJ) $(OBJ_BONUS)
@@ -54,4 +59,6 @@ fclean: 	clean
 		$(RM) $(NAME) $(LIBFT)
 		cd $(LIBFTDIR) && $(MAKE) fclean
 	
+aclean: all clean
+
 re: fclean all
