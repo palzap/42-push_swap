@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:59:53 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:49 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:49:34 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:49:34 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../headers/checker.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_sa(t_arrays *arrays)
 {
-	long long		n;
+	int	temp;
 
-	n = nb;
-	if (n < 0)
+	temp = 0;
+	if (arrays->e_a > 1)
 	{
-		n *= -1;
-		ft_putchar_fd('-', fd);
+		temp = arrays->s_a[0];
+		arrays->s_a[0] = arrays->s_a[1];
+		arrays->s_a[1] = temp;
 	}
-	if (n < 10)
+}
+
+void	ft_sb(t_arrays *arrays)
+{
+	int	temp;
+
+	temp = 0;
+	if (arrays->e_b > 1)
 	{
-		ft_putchar_fd(n + 48, fd);
+		temp = arrays->s_b[0];
+		arrays->s_b[0] = arrays->s_b[1];
+		arrays->s_b[1] = temp;
 	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+}
+
+void	ft_ss(t_arrays *arrays)
+{
+	ft_sa(arrays);
+	ft_sb(arrays);
 }

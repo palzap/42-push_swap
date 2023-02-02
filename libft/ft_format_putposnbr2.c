@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_putposnbr2.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:10:38 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/05 07:59:13 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:57:22 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

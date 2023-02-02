@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_puthexa2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:12:06 by pealexan          #+#    #+#             */
-/*   Updated: 2023/01/05 07:59:13 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:57:09 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

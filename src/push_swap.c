@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleal <pleal@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 08:28:03 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/01 20:03:14 by pleal            ###   ########.fr       */
+/*   Created: 2023/02/02 11:54:58 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:54:59 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
-
-void	ft_sort_1(t_arrays *a)
-{
-	free(a->s_a);
-	exit (1);
-}
 
 void	ft_sort_2(t_arrays *a)
 {
@@ -35,9 +29,7 @@ int	main(int argc, char **argv)
 		ft_get_stack(argv[1], &arrays);
 	else
 		ft_get_stack_multiarg(argv, argc, &arrays);
-	if (arrays.e_a == 1)
-		ft_sort_1(&arrays);
-	else if (arrays.e_a == 2)
+	if (arrays.e_a == 2)
 		ft_sort_2(&arrays);
 	else if (arrays.e_a == 3)
 		ft_sort_3(&arrays);

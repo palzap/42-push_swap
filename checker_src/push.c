@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:55:07 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:08 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:49:13 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:49:14 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/checker.h"
 
 void	ft_pa(t_arrays *a)
 {
@@ -35,7 +35,6 @@ void	ft_pa(t_arrays *a)
 		a->s_a[a->i++] = temp_a[a->j++];
 	free(temp_a);
 	free(temp_b);
-	ft_printf("pa\n");
 }
 
 void	ft_pb(t_arrays *a)
@@ -61,5 +60,4 @@ void	ft_pb(t_arrays *a)
 		a->s_b[a->i++] = temp_b[a->j++];
 	free(temp_a);
 	free(temp_b);
-	ft_printf("pb\n");
 }

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:55:56 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:57 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:49:47 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:49:47 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/checker.h"
 
 void	ft_free(t_arrays *a)
 {

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:55:20 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:21 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:49:26 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:49:27 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/checker.h"
 
-void	ft_ra(t_arrays *arrays, int flag)
+void	ft_ra(t_arrays *arrays)
 {
 	int	temp;
 	int	i;
@@ -25,11 +25,9 @@ void	ft_ra(t_arrays *arrays, int flag)
 		i++;
 	}
 	arrays->s_a[i] = temp;
-	if (flag == 1)
-		ft_printf("ra\n");
 }
 
-void	ft_rb(t_arrays *arrays, int flag)
+void	ft_rb(t_arrays *arrays)
 {
 	int	temp;
 	int	i;
@@ -42,13 +40,10 @@ void	ft_rb(t_arrays *arrays, int flag)
 		i++;
 	}
 	arrays->s_b[i] = temp;
-	if (flag == 1)
-		ft_printf("rb\n");
 }
 
 void	ft_rr(t_arrays *arrays)
 {
-	ft_ra(arrays, 2);
-	ft_rb(arrays, 2);
-	ft_printf("rr\n");
+	ft_ra(arrays);
+	ft_rb(arrays);
 }

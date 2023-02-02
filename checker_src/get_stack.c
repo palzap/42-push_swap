@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:54:39 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:39 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:49:04 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 11:49:06 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../headers/checker.h"
 
+/* Simple function to free the memory allocated by split.                     */
 void	ft_free_split(char **split)
 {
 	int	i;
@@ -22,6 +23,7 @@ void	ft_free_split(char **split)
 	free(split);
 }
 
+/*  Check for duplicates or values.                                           */
 int	ft_check_doubles(int argc, char **argv)
 {
 	int	i;
@@ -46,6 +48,8 @@ int	ft_check_doubles(int argc, char **argv)
 	return (0);
 }
 
+/*  Check for duplicates or values out of INT range.                          */
+/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
 int	ft_check_numbers(int argc, char **argv)
 {
 	int	i;
@@ -70,6 +74,10 @@ int	ft_check_numbers(int argc, char **argv)
 	return (ft_check_doubles(argc, argv));
 }
 
+/*  Applied when numbers are passed as individual arguments.                  */
+/*  Check for duplicates or values out of INT range.                          */
+/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
+/*  Fill stack_a with the numbers to be sorted.                               */
 void	ft_get_stack_multiarg(char **argv, int argc, t_arrays *arrays)
 {
 	if (ft_check_numbers(argc, argv) == -1)
@@ -84,6 +92,13 @@ void	ft_get_stack_multiarg(char **argv, int argc, t_arrays *arrays)
 	}
 }
 
+/*  Applied when numbers are passed as one single argument, where each number */
+/*  is separated by a space.                                                  */
+/*  First check amount of numbers, if 1 program terminates (already sorted).  */
+/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
+/*  Apply ft_split function to get each separate number.                      */
+/*  Check for duplicates or values out of INT range.                          */
+/*  Fill stack_a with the numbers to be sorted.                               */
 void	ft_get_stack(char *arg, t_arrays *arrays)
 {
 	char	**stack;

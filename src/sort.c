@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleal <pleal@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 08:34:10 by pleal             #+#    #+#             */
-/*   Updated: 2023/02/01 19:35:50 by pleal            ###   ########.fr       */
+/*   Created: 2023/02/02 11:55:32 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/02 12:17:30 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,18 @@ void	ft_rotate_sort(t_arrays *a)
 void	ft_sort_3(t_arrays *a)
 {
 	ft_get_min_max(a);
-	if (a->s_a[0] < a->s_a[1] && a->s_a[0] < a->s_a[2] && a->s_a[1] > a->s_a[2])
+	if (a->s_a[0] == a->min_a && a->s_a[1] == a->max_a)
 	{
 		ft_sa(a, 1);
 		ft_ra(a, 1);
 	}
-	else if (a->s_a[0] > a->s_a[1] && a->s_a[0] < a->s_a[2]
-		&& a->s_a[1] < a->s_a[2])
+	else if (a->s_a[1] == a->min_a && a->s_a[2] == a->max_a)
 		ft_sa(a, 1);
-	else if (a->s_a[0] < a->s_a[1] && a->s_a[0] > a->s_a[2]
-		&& a->s_a[1] > a->s_a[2])
+	else if (a->s_a[2] == a->min_a && a->s_a[1] == a->max_a)
 		ft_rra(a, 1);
-	else if (a->s_a[0] > a->s_a[1] && a->s_a[0] > a->s_a[2]
-		&& a->s_a[1] < a->s_a[2])
+	else if (a->s_a[0] == a->max_a && a->s_a[1] == a->min_a)
 		ft_ra(a, 1);
-	else if (a->s_a[0] > a->s_a[1] && a->s_a[0] > a->s_a[2]
-		&& a->s_a[1] > a->s_a[2])
+	else if (a->s_a[0] == a->max_a && a->s_a[2] == a->min_a)
 	{
 		ft_sa(a, 1);
 		ft_rra(a, 1);
