@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:27 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:28 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/03 09:12:56 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 int	ft_best_element(t_arrays *a)
 {
 	int		index;
-	int		steps;
+	int		moves;
 
-	steps = INT_MAX;
+	moves = INT_MAX;
 	index = -1;
 	a->i = 0;
 	while (a->i < a->e_b)
 	{
-		if (a->least_moves[a->s_b[a->i]] < steps)
+		if (a->least_moves[a->s_b[a->i]] < moves)
 		{
-			steps = a->least_moves[a->s_b[a->i]];
+			moves = a->least_moves[a->s_b[a->i]];
 			index = a->i;
 		}
 		a->i++;

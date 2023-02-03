@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:46 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:46 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:29:48 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	ft_get_median_and_indexing(t_arrays *a)
 			}
 		}
 	}
-	a->median = temp[a->e_a / 2];
 	ft_convert_index(a, temp);
+	a->median = a->e_a / 2;
 	free(temp);
 }
 

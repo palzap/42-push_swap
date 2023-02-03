@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:10:26 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:50:10 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/03 09:18:13 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ ra[x] = z
 rra[x] = elements_a - z 
 This is the number of ra or rra needed to get the best stack_a element to
 the top.*/
-void	ft_position(t_arrays *a, int index);
+void	ft_a_indexing(t_arrays *a, int index);
 
 /*PUSH_SWAP-------------------------------------------------------------------*/
 /* Sorts 2 numbers. */

@@ -6,13 +6,13 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:52 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:53 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/03 09:18:23 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	ft_position(t_arrays *a, int index)
+void	ft_a_indexing(t_arrays *a, int index)
 {
 	int		position;
 	int		diff;
@@ -43,13 +43,13 @@ void	ft_indexing(t_arrays *a)
 	a->i = 0;
 	while (a->i < a->e_b + a->e_a)
 	{
-		a->least_moves[a->i] = a->e_a + a->e_b + 1;
+		a->least_moves[a->i] = INT_MAX;
 		a->i++;
 	}
 	index = 0;
 	while (index < a->e_b)
 	{
-		ft_position(a, index);
+		ft_a_indexing(a, index);
 		a->rb[a->s_b[index]] = index;
 		a->rrb[a->s_b[index]] = a->e_b - index;
 		index++;
