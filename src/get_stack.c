@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:39 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:39 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:52:59 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_free_split(char **split)
 	free(split);
 }
 
-int	ft_check_doubles(int argc, char **argv)
+int	ft_check_doubles(int argc, char **argv, int x)
 {
 	int	i;
 	int	j;
@@ -30,6 +30,8 @@ int	ft_check_doubles(int argc, char **argv)
 
 	i = 1;
 	flag = 0;
+	if (x == 1)
+		i = 0;
 	while (i < argc)
 	{
 		j = i + 1;
@@ -46,13 +48,15 @@ int	ft_check_doubles(int argc, char **argv)
 	return (0);
 }
 
-int	ft_check_numbers(int argc, char **argv)
+int	ft_check_numbers(int argc, char **argv, int j)
 {
 	int	i;
 	int	flag;
 
 	i = 1;
 	flag = 0;
+	if (j == 1)
+		i = 0;
 	while (argv[i])
 	{
 		if (ft_atol(argv[i]) > INT_MAX)
@@ -67,12 +71,12 @@ int	ft_check_numbers(int argc, char **argv)
 			return (-1);
 		i++;
 	}
-	return (ft_check_doubles(argc, argv));
+	return (ft_check_doubles(argc, argv, j));
 }
 
 void	ft_get_stack_multiarg(char **argv, int argc, t_arrays *arrays)
 {
-	if (ft_check_numbers(argc, argv) == -1)
+	if (ft_check_numbers(argc, argv, 0) == -1)
 		exit (1);
 	arrays->e_a = argc - 1;
 	arrays->s_a = ft_memalloc(arrays->e_a);
@@ -89,11 +93,14 @@ void	ft_get_stack(char *arg, t_arrays *arrays)
 	char	**stack;
 
 	if (ft_wordcount(arg, ' ') == 1)
+	{	
+		if (!ft_strdigit(arg) || ft_atol(arg) > INT_MAX
+			|| ft_atol(arg) < INT_MIN)
+			write(2, "Error\n", ft_strlen("Error\n"));
 		exit (1);
-	if (!ft_strdigit(arg))
-		exit (1);
+	}
 	stack = ft_split(arg, ' ');
-	if (ft_check_numbers(ft_wordcount(arg, ' '), stack) == -1)
+	if (ft_check_numbers(ft_wordcount(arg, ' '), stack, 1) == -1)
 	{
 		ft_free_split(stack);
 		exit (1);

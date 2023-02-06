@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= push_swap
-CHECKER		= checker
+BONUS		= checker
 LIBFT		= libft.a
 
 #----------DIRS----------#
@@ -61,15 +61,15 @@ $(LIBFT):
 $(NAME): 	$(OBJ) $(LIBFT)
 		$(CC) $(CFLAGS) $(OBJ) $(LIBFTDIR)$(LIBFT) -o $(NAME)
 
-checker:	$(OBJ_CHECKER) $(LIBFT)
-		$(CC) $(CFLAGS) $(OBJ_CHECKER) $(LIBFTDIR)$(LIBFT) -o $(CHECKER)
+bonus:		$(OBJ_CHECKER) $(LIBFT)
+		$(CC) $(CFLAGS) $(OBJ_CHECKER) $(LIBFTDIR)$(LIBFT) -o $(BONUS)
 
 clean:
 		@$(RM) $(OBJ) $(OBJ_CHECKER)
 		@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: 	clean
-		@$(RM) $(NAME) $(CHECKER) $(LIBFT)
+		@$(RM) $(NAME) $(BONUS) $(LIBFT)
 		@cd $(LIBFTDIR) && $(MAKE) fclean
 	
 aclean: all clean

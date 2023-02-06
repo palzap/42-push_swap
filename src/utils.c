@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:55:56 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:57 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:47:23 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	ft_strdigit(char *str)
 int	ft_is_sorted(t_arrays *arrays)
 {
 	arrays->i = 0;
+	if (arrays->e_a == 1)
+		exit (1);
 	while (arrays->i < arrays->e_a - 1)
 	{
 		if (arrays->s_a[arrays->i] > arrays->s_a[arrays->i + 1])

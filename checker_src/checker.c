@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:34:21 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 12:55:41 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:38:20 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 	else
 		ft_get_stack_multiarg(argv, argc, &arrays);
 	ft_do_moves(&arrays);
-	if (!ft_is_sorted(&arrays) && arrays.e_b != 0)
+	if (!ft_is_sorted(&arrays) || arrays.e_b != 0)
 		ft_printf("KO\n");
 	else
 		ft_printf("OK\n");

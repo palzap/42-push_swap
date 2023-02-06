@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:10:26 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/03 09:18:13 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:34:19 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ void	ft_scheme_3(t_arrays *a, int index);
 void	ft_free_split(char **split);
 
 /* Check for duplicate values. */
-int		ft_check_doubles(int argc, char **argv);
+int		ft_check_doubles(int argc, char **argv, int x);
 
 /* Check for duplicates or values out of INT range.
 Check if there are any characters besides a digit, '-', '+' or ' '. */
-int		ft_check_numbers(int argc, char **argv);
+int		ft_check_numbers(int argc, char **argv, int j);
 
 /* Applied when numbers are passed as individual arguments.
 Check for duplicates or values out of INT range.

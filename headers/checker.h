@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:10:26 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 12:51:09 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:34:13 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	ft_move(char *move, t_arrays *a);
 void	ft_free_split(char **split);
 
 /* Check for duplicate values. */
-int		ft_check_doubles(int argc, char **argv);
+int		ft_check_doubles(int argc, char **argv, int x);
 
 /* Check for duplicates or values out of INT range.
 Check if there are any characters besides a digit, '-', '+' or ' '. */
-int		ft_check_numbers(int argc, char **argv);
+int		ft_check_numbers(int argc, char **argv, int j);
 
 /* Applied when numbers are passed as individual arguments.
 Check for duplicates or values out of INT range.
