@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:58 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:54:59 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:11:39 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main(int argc, char **argv)
 		ft_sort_2(&arrays);
 	else if (arrays.e_a == 3)
 		ft_sort_3(&arrays);
-	else if (arrays.e_a == 5)
+	else if (arrays.e_a == 5 && !ft_is_sorted(&arrays))
 		ft_sort_5(&arrays);
-	else
+	else if (!ft_is_sorted(&arrays))
 		ft_sort(&arrays);
 	if (!ft_is_sorted(&arrays))
 		ft_rotate_sort(&arrays);
