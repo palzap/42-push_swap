@@ -7,7 +7,8 @@ Started:
   
 First submission:  
 06/02/2023  
-Score: xxx%  
+Score: 0%  
+Note: I had an error while checking the validity of the input arguments. Also, for the bonus part, I did not add a Bonus rule to my makefile.  
   
 Notes:  
 My push_swap is done using only arrays.  
