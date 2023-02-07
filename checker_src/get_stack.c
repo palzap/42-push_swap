@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:49:04 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/06 11:35:13 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:54:39 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/07 08:39:08 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/checker.h"
+#include "../headers/push_swap.h"
 
-/* Simple function to free the memory allocated by split.                     */
 void	ft_free_split(char **split)
 {
 	int	i;
@@ -23,7 +22,6 @@ void	ft_free_split(char **split)
 	free(split);
 }
 
-/*  Check for duplicates or values.                                           */
 int	ft_check_doubles(int argc, char **argv, int x)
 {
 	int	i;
@@ -50,8 +48,6 @@ int	ft_check_doubles(int argc, char **argv, int x)
 	return (0);
 }
 
-/*  Check for duplicates or values out of INT range.                          */
-/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
 int	ft_check_numbers(int argc, char **argv, int j)
 {
 	int	i;
@@ -63,13 +59,8 @@ int	ft_check_numbers(int argc, char **argv, int j)
 		i = 0;
 	while (argv[i])
 	{
-		if (ft_atol(argv[i]) > INT_MAX)
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (ft_atol(argv[i]) < INT_MIN)
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (ft_atoi(argv[i]) == 0 && argv[i][0] != '0')
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (!ft_strdigit(argv[i]))
+		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN
+			|| !ft_strdigit(argv[i]))
 			flag = write(2, "Error\n", ft_strlen("Error\n"));
 		if (flag != 0)
 			return (-1);
@@ -78,10 +69,6 @@ int	ft_check_numbers(int argc, char **argv, int j)
 	return (ft_check_doubles(argc, argv, j));
 }
 
-/*  Applied when numbers are passed as individual arguments.                  */
-/*  Check for duplicates or values out of INT range.                          */
-/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
-/*  Fill stack_a with the numbers to be sorted.                               */
 void	ft_get_stack_multiarg(char **argv, int argc, t_arrays *arrays)
 {
 	if (ft_check_numbers(argc, argv, 0) == -1)
@@ -96,21 +83,17 @@ void	ft_get_stack_multiarg(char **argv, int argc, t_arrays *arrays)
 	}
 }
 
-/*  Applied when numbers are passed as one single argument, where each number */
-/*  is separated by a space.                                                  */
-/*  First check amount of numbers, if 1 program terminates (already sorted).  */
-/*  Check if there are any characters besides a digit, '-', '+' or ' '.       */
-/*  Apply ft_split function to get each separate number.                      */
-/*  Check for duplicates or values out of INT range.                          */
-/*  Fill stack_a with the numbers to be sorted.                               */
 void	ft_get_stack(char *arg, t_arrays *arrays)
 {
 	char	**stack;
 
 	if (ft_wordcount(arg, ' ') == 1)
+	{	
+		if (!ft_strdigit(arg) || ft_atol(arg) > INT_MAX
+			|| ft_atol(arg) < INT_MIN)
+			write(2, "Error\n", ft_strlen("Error\n"));
 		exit (1);
-	if (!ft_strdigit(arg))
-		exit (1);
+	}
 	stack = ft_split(arg, ' ');
 	if (ft_check_numbers(ft_wordcount(arg, ' '), stack, 1) == -1)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:54:39 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/06 11:52:59 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/07 08:47:58 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,8 @@ int	ft_check_numbers(int argc, char **argv, int j)
 		i = 0;
 	while (argv[i])
 	{
-		if (ft_atol(argv[i]) > INT_MAX)
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (ft_atol(argv[i]) < INT_MIN)
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (ft_atoi(argv[i]) == 0 && argv[i][0] != '0')
-			flag = write(2, "Error\n", ft_strlen("Error\n"));
-		else if (!ft_strdigit(argv[i]))
+		if (ft_atol(argv[i]) > INT_MAX || ft_atol(argv[i]) < INT_MIN
+			|| !ft_strdigit(argv[i]))
 			flag = write(2, "Error\n", ft_strlen("Error\n"));
 		if (flag != 0)
 			return (-1);
@@ -97,7 +92,7 @@ void	ft_get_stack(char *arg, t_arrays *arrays)
 		if (!ft_strdigit(arg) || ft_atol(arg) > INT_MAX
 			|| ft_atol(arg) < INT_MIN)
 			write(2, "Error\n", ft_strlen("Error\n"));
-		exit (1);
+		exit (0);
 	}
 	stack = ft_split(arg, ' ');
 	if (ft_check_numbers(ft_wordcount(arg, ' '), stack, 1) == -1)

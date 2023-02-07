@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:34:21 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/06 11:38:20 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/07 10:12:53 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,39 @@ void	ft_move(char *move, t_arrays *a)
 {
 	if (!ft_strncmp(move, "sa\n", 3))
 		ft_sa(a);
-	if (!ft_strncmp(move, "sb\n", 3))
+	else if (!ft_strncmp(move, "sb\n", 3))
 		ft_sb(a);
-	if (!ft_strncmp(move, "ss\n", 3))
+	else if (!ft_strncmp(move, "ss\n", 3))
 		ft_ss(a);
-	if (!ft_strncmp(move, "ra\n", 3))
+	else if (!ft_strncmp(move, "ra\n", 3))
 		ft_ra(a);
-	if (!ft_strncmp(move, "rb\n", 3))
+	else if (!ft_strncmp(move, "rb\n", 3))
 		ft_rb(a);
-	if (!ft_strncmp(move, "rr\n", 3))
+	else if (!ft_strncmp(move, "rr\n", 3))
 		ft_rr(a);
-	if (!ft_strncmp(move, "rra\n", 4))
+	else if (!ft_strncmp(move, "rra\n", 4))
 		ft_rra(a);
-	if (!ft_strncmp(move, "rrb\n", 4))
+	else if (!ft_strncmp(move, "rrb\n", 4))
 		ft_rrb(a);
-	if (!ft_strncmp(move, "rrr\n", 4))
+	else if (!ft_strncmp(move, "rrr\n", 4))
 		ft_rr(a);
-	if (!ft_strncmp(move, "pa\n", 3))
+	else if (!ft_strncmp(move, "pa\n", 3))
 		ft_pa(a);
-	if (!ft_strncmp(move, "pb\n", 3))
+	else if (!ft_strncmp(move, "pb\n", 3))
 		ft_pb(a);
+	else
+		write(2, "Error\n", 6);
 }
 
 void	ft_do_moves(t_arrays *a)
 {
 	char	*move;
 
-	move = ft_strdup("1");
+	move = ft_strdup("");
 	while (move)
 	{
-		ft_move(move, a);
+		if (move[0] != '\0')
+			ft_move(move, a);
 		if (!ft_strncmp(move, "done\n", 5))
 			break ;
 		free (move);
