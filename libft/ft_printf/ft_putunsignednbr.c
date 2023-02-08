@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_hexastr.c                                   :+:      :+:    :+:   */
+/*   ft_putunsignednbr.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 13:52:27 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:57:33 by pealexan         ###   ########.fr       */
+/*   Created: 2022/11/08 16:59:53 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/08 10:55:40 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../../headers/libft.h"
 
-char	*ft_get_hexastr(unsigned long long nb, char *base)
+int	ft_putunsignednbr(unsigned int nb)
 {
-	int		nb_length;
-	char	*hexastr;
+	int		count;
+	char	*base;
 
-	nb_length = ft_getlength(nb, 16);
-	hexastr = (char *)malloc(sizeof(char) * (nb_length + 1));
-	if (!hexastr)
-		return (0);
-	hexastr[nb_length] = '\0';
-	while (nb_length > 0)
+	count = 0;
+	base = "0123456789";
+	if (nb < 10)
 	{
-		hexastr[nb_length - 1] = base[nb % 16];
-		nb /= 16;
-		nb_length--;
+		count += ft_putchar(base[nb]);
 	}
-	return (hexastr);
+	if (nb >= 10)
+	{
+		count += ft_putnbr(nb / 10);
+		count += ft_putnbr(nb % 10);
+	}
+	return (count);
 }

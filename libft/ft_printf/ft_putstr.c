@@ -6,11 +6,11 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 09:05:34 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:56 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:55:40 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../../headers/libft.h"
 
 int	ft_putstr(char *str)
 {

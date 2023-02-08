@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_putchar.c                                :+:      :+:    :+:   */
+/*   ft_get_hexastr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:54:41 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:57:04 by pealexan         ###   ########.fr       */
+/*   Created: 2022/12/05 13:52:27 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/08 10:55:40 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../../headers/libft.h"
 
-int	ft_format_putchar(t_buffer *values, char c)
+char	*ft_get_hexastr(unsigned long long nb, char *base)
 {
-	int	count;
+	int		nb_length;
+	char	*hexastr;
 
-	count = 0;
-	if (values->minus == 1)
+	nb_length = ft_getlength(nb, 16);
+	hexastr = (char *)malloc(sizeof(char) * (nb_length + 1));
+	if (!hexastr)
+		return (0);
+	hexastr[nb_length] = '\0';
+	while (nb_length > 0)
 	{
-		count += write(1, &c, 1);
-		while (values->width > 1)
-		{
-			count += write(1, " ", 1);
-			values->width--;
-		}
+		hexastr[nb_length - 1] = base[nb % 16];
+		nb /= 16;
+		nb_length--;
 	}
-	else
-	{
-		while (values->width > 1)
-		{
-			count += write(1, " ", 1);
-			values->width--;
-		}
-		count += write(1, &c, 1);
-	}
-	return (count);
+	return (hexastr);
 }

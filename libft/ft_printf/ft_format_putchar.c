@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddress.c                                    :+:      :+:    :+:   */
+/*   ft_format_putchar.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:59:53 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:37 by pealexan         ###   ########.fr       */
+/*   Created: 2022/11/08 16:54:41 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/08 10:55:40 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../../headers/libft.h"
 
-int	ft_putaddress(unsigned long nb)
+int	ft_format_putchar(t_buffer *v, char c)
 {
 	int	count;
 
 	count = 0;
-	if (!nb)
-		return (ft_putstr("(nil)"));
+	if (v->minus == 1)
+	{
+		count += write(1, &c, 1);
+		while (v->w > 1)
+		{
+			count += write(1, " ", 1);
+			v->w--;
+		}
+	}
 	else
-		write (1, "0x", 2);
-	count += ft_puthexa(nb, 'x');
-	return (count + 2);
+	{
+		while (v->w > 1)
+		{
+			count += write(1, " ", 1);
+			v->w--;
+		}
+		count += write(1, &c, 1);
+	}
+	return (count);
 }
