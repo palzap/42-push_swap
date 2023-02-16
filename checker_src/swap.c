@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:49:34 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:49:34 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:55:44 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/16 21:22:32 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_sa(t_arrays *arrays)
 		arrays->s_a[0] = arrays->s_a[1];
 		arrays->s_a[1] = temp;
 	}
+	return ;
 }
 
 void	ft_sb(t_arrays *arrays)
@@ -36,6 +37,7 @@ void	ft_sb(t_arrays *arrays)
 		arrays->s_b[0] = arrays->s_b[1];
 		arrays->s_b[1] = temp;
 	}
+	return ;
 }
 
 void	ft_ss(t_arrays *arrays)

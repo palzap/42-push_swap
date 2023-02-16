@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:55:32 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 12:17:30 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:13:10 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_sort_5(t_arrays *a)
 	}
 }
 
-void	ft_sort(t_arrays *a)
+void	ft_sort_multi(t_arrays *a)
 {
 	ft_get_median_and_indexing(a);
 	ft_get_min_max(a);
@@ -104,4 +104,16 @@ void	ft_sort(t_arrays *a)
 		ft_move(a);
 	}
 	ft_free(a);
+}
+
+void	ft_sort(t_arrays *a)
+{
+	if (a->e_a == 2)
+		ft_sort_2(a);
+	else if (a->e_a == 3)
+		ft_sort_3(a);
+	else if (a->e_a == 5)
+		ft_sort_5(a);
+	else
+		ft_sort_multi(a);
 }

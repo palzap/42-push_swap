@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:55:13 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:14 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:59:15 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_rra(t_arrays *arrays, int flag)
 	int	temp;
 	int	i;
 
+	if (!arrays->e_a)
+		return ;
 	i = arrays->e_a - 1;
 	temp = arrays->s_a[i];
 	while (i > 0)
@@ -34,6 +36,8 @@ void	ft_rrb(t_arrays *arrays, int flag)
 	int	temp;
 	int	i;
 
+	if (!arrays->e_b)
+		return ;
 	i = arrays->e_b - 1;
 	temp = arrays->s_b[i];
 	while (i > 0)

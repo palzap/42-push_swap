@@ -6,7 +6,7 @@
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:55:44 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:44 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:57:45 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_sa(t_arrays *arrays, int flag)
 		if (flag == 1)
 			ft_printf("sa\n");
 	}
+	return ;
 }
 
 void	ft_sb(t_arrays *arrays, int flag)
@@ -40,6 +41,7 @@ void	ft_sb(t_arrays *arrays, int flag)
 		if (flag == 1)
 			ft_printf("sb\n");
 	}
+	return ;
 }
 
 void	ft_ss(t_arrays *arrays)

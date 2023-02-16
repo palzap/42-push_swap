@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:55:56 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/06 11:47:23 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:07:51 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,15 @@ int	*ft_memalloc(int size)
 
 int	ft_strdigit(char *str)
 {
+	while (*str == ' ')
+		str++;
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (0);
 	while (*str)
 	{
-		if (!ft_isdigit(*str) && *str != '-' && *str != '+' && *str != ' ')
+		if (!ft_isdigit(*str))
 			return (0);
 		str++;
 	}

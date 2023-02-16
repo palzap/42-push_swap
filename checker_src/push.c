@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 11:49:13 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/02 11:49:14 by pealexan         ###   ########.fr       */
+/*   Created: 2023/02/02 11:55:07 by pealexan          #+#    #+#             */
+/*   Updated: 2023/02/16 21:21:56 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_pa(t_arrays *a)
 	int	*temp_a;
 	int	*temp_b;
 
+	if (!a->e_b)
+		return ;
 	temp_a = ft_memalloc(a->e_a);
 	temp_b = ft_memalloc(a->e_b);
 	temp_a = ft_memcpy(temp_a, a->s_a, sizeof(int) * a->e_a);
@@ -42,6 +44,8 @@ void	ft_pb(t_arrays *a)
 	int	*temp_a;
 	int	*temp_b;
 
+	if (!a->e_a)
+		return ;
 	temp_a = ft_memalloc(a->e_a);
 	temp_b = ft_memalloc(a->e_b);
 	temp_a = ft_memcpy(temp_a, a->s_a, sizeof(int) * a->e_a);

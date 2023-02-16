@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pealexan <pealexan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pealexan <pealexan@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:10:26 by pealexan          #+#    #+#             */
-/*   Updated: 2023/02/06 11:34:19 by pealexan         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:21:27 by pealexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		ft_check_doubles(int argc, char **argv, int x);
 
 /* Check for duplicates or values out of INT range.
 Check if there are any characters besides a digit, '-', '+' or ' '. */
-int		ft_check_numbers(int argc, char **argv, int j);
+int		ft_check_numbers(int argc, char **argv, int x);
 
 /* Applied when numbers are passed as individual arguments.
 Check for duplicates or values out of INT range.
@@ -172,6 +172,9 @@ The first element becomes the last one. */
 void	ft_rr(t_arrays *arrays);
 
 /*SORT------------------------------------------------------------------------*/
+/*Directs to the right algorithm*/
+void	ft_sort(t_arrays *a);
+
 /* Sorts 3 numbers. */
 void	ft_sort_3(t_arrays *a);
 
@@ -183,7 +186,7 @@ Sorts the remaining 3 values.
 Allocates memory for the needed arrays to be filled.
 Applies the functions to decide which combination of moves is the best to 
 ensure the minimum number of moves used untill stack_b is emply. */
-void	ft_sort(t_arrays *a);
+void	ft_sort_multi(t_arrays *a);
 
 /* Simply calculates between ra and rra the least amount of moves needed to 
 sort the stack. */
