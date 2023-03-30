@@ -31,7 +31,7 @@ void	ft_move(char *move, t_arrays *a)
 	else if (!ft_strncmp(move, "rrb\n", 4))
 		ft_rrb(a);
 	else if (!ft_strncmp(move, "rrr\n", 4))
-		ft_rr(a);
+		ft_rrr(a);
 	else if (!ft_strncmp(move, "pa\n", 3))
 		ft_pa(a);
 	else if (!ft_strncmp(move, "pb\n", 3))
