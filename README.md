@@ -17,7 +17,7 @@ The set of predefined operations includes:
 * rrb : reverse rotate the stack b (move the last element to the top of the stack)
 * rrr : do rra and rrb simultaneously
 
-The project requires you to implement an efficient algorithm that can sort the stack of integers using the smallest number of operations possible. The maximum number of operations allowed for a stack of 500 elements is approximately 11,000. The project is designed to test your understanding of algorithms and data structures, as well as your ability to write clean, efficient, and well-organized code.
+The project requires you to implement an efficient algorithm that can sort the stack of integers using the smallest number of operations possible. The project is designed to test your understanding of algorithms and data structures, as well as your ability to write clean, efficient, and well-organized code.
 
 ## Evaluation
 #### First submission
